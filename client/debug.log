@@ -1,0 +1,26 @@
+
+{
+	gl.supports_vertex_array_object: true
+	cocos2d.x.version: Quick-Cocos2dx-Community 3.6
+	gl.vendor: Intel Inc.
+	gl.supports_PVRTC: false
+	gl.renderer: Intel(R) HD Graphics 6000
+	cocos2d.x.compiled_with_profiler: false
+	gl.max_texture_size: 16384
+	gl.supports_ETC1: false
+	gl.supports_BGRA8888: false
+	cocos2d.x.build_type: RELEASE
+	gl.supports_discard_framebuffer: false
+	gl.supports_NPOT: true
+	gl.supports_S3TC: true
+	gl.version: 2.1 INTEL-10.14.66
+	gl.supports_ATITC: false
+	gl.max_texture_units: 16
+	cocos2d.x.compiled_with_gl_state_cache: true
+}
+
+
+Quick-Cocos2dx-Community C++ support ready.
+------------------------------------------------
+LOAD LUA FILE: /Users/wzx/Desktop/MyServer/Legend/client/src/main.lua
+------------------------------------------------

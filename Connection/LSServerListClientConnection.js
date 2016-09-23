@@ -2,7 +2,6 @@
 	作用:在服务器列表服务器中等待的客户端连接
 */
 
-
 var net = require('net')
 var LSServerClientUnit =  function(SOCKET)
 {
