@@ -4,29 +4,53 @@
 
 var net = require('net')
 var os = require('os'); 
-
-var LSGateWayUnit =  function(SOCKET,ON_CLOSE)
+var MsgDef = require("../Connection/LSMessageDef");
+var MsgOperator = require("../Connection/LSMessageOpeator").LSMessageOpeator; 
+var LSGateWayUnit =  function(ON_CLOSE)
 {
-	this.port =  SOCKET.remotePort;
-	this.ip   = SOCKET.remoteAddress;
-	this.socket =  SOCKET
 	var self = this;
-    SOCKET.on('data',function(data){
+	this.setSocket = function(OPERATOR,SOCKET)
+	{
+		this.port =  SOCKET.remotePort;
+		this.ip   = SOCKET.remoteAddress;
+		this.socket =  SOCKET;
+		this.operator = OPERATOR;
+		SOCKET.on('data',self.onData);
+		SOCKET.on('error',self.onError);
+		SOCKET.on('close',this.onClose);
+	}
+	this.setInfo = function(SERVER_ID,SERVER_NAME)
+	{
+		this.serverID = SERVER_ID;
+		this.serverName = SERVER_NAME;
+	}
+	this.onData = function(data){
+		self.operator.onData(data)
+	}
+	this.onError = function(exception)
+	{
+		console.log('socket error:' + exception);
+	    self.socket.end();
+	}
+	this.onClose = function()
+	{
+		ON_CLOSE(self);
+	}
 
-    });
+    this.send = function(DATA)
+    {
+    	self.operator.send(DATA)
+    }
 
-    SOCKET.on('error',function(exception){
-        console.log('socket error:' + exception);
-        this.socket.end();
-    });
-    //客户端关闭事件
-    SOCKET.on('close',function(data){
-    	ON_CLOSE(self);
-    });
+    this.regisit = function(ID,CALLBACK)
+	{
+		self.operator.regisit(ID,CALLBACK)
+	}
 }
 exports.LSGateWayUnit = LSGateWayUnit;
-exports.LSGateWayServerConnection = function(ADDRESS_CALLBACK,CALLBACK,ON_CLOSE)
+exports.LSGateWayServerConnection = function(ADDRESS_CALLBACK,CALLBACK,ON_CLOSE,MESSAGE_TYPE)
 {
+	var self = this;
 	this.startListen = function()
 	{
 		var IPv4,hostName;  
@@ -35,13 +59,29 @@ exports.LSGateWayServerConnection = function(ADDRESS_CALLBACK,CALLBACK,ON_CLOSE)
 		    if(os.networkInterfaces().en0[i].family=='IPv4'){  
 		        IPv4=os.networkInterfaces().en0[i].address;  
 		    }  
-		}  
-
-
+		}
 		var server = net.createServer(function(socket){
-			socket.setEncoding('binary');
-			var newServer = new LSGateWayUnit(socket,ON_CLOSE);
-			CALLBACK(newServer);
+
+			socket.setEncoding('utf-8');
+			var newServer = new LSGateWayUnit(ON_CLOSE)
+			var msgOperator = new MsgOperator(socket); 
+			msgOperator.setTarget(newServer);
+			newServer.setSocket(msgOperator,socket)
+
+			msgOperator.regisit(MESSAGE_TYPE,function(MESSAGE,SERVER){
+				if(MESSAGE_TYPE == MsgDef.MSG_GATEWAY_TO_SERVERLIST_GATEWAYINFO)
+				{
+					newServer.setInfo(MESSAGE.SERVER_ID,MESSAGE.SERVER_NAME);
+					CALLBACK(newServer);
+
+				}else if(MESSAGE_TYPE == MsgDef.MSG_WORDSERVER_TO_GATEWAY_WORDSERVERINFO)
+				{
+					newServer.setInfo(MESSAGE.SERVER_TYPE,MESSAGE.SERVER_NAME);
+					CALLBACK(newServer);
+				}
+				
+			})
+			
 
 		}).listen(0);
 		server.on('listening',function(){

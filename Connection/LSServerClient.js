@@ -6,9 +6,9 @@ var net = require('net')
 exports.LSServerConnectionClientUnit =  function(IP,PORT,ON_CONNECTION,ON_DATA,ON_DISCONNECTION,ON_ERROR)
 {
 	var client  = new net.Socket();
-	client.setEncoding('binary');
+	client.setEncoding('utf-8');
 
-	this.client = client;
+	this.socket = client;
 	this.connection = function()
 	{
 		client.connect(PORT,IP,function(){

@@ -10,53 +10,61 @@ var clientConnection = require("../Connection/LSServerListClientConnection").LSS
 var clientUnit = require("../Connection/LSServerListClientConnection").LSServerClientUnit;
 var OpenGateWay = require("../public/LSCommondHandle").LSOpenGatWay;
 var SERVER_LIST_PORT = 48562
+var MsgDef = require("../Connection/LSMessageDef");
 
 var serverList = null;
 
 function LSServerListServer()
 {
-	
-	this.allServers = new Array()
+	this.allServers = {}
 	this.SERVER_IP = "";
 	this.SERVER_PORT = "";
 	var self =this;
 	this.run = function()
 	{
-		this.allClients = new Array();
-		this.serverConnection = new serverConnection(this.handleAddress,this.onNewServer,this.onServerClose);
+		this.allClients = {};
+		this.serverConnection = new serverConnection(this.handleAddress,this.onNewServer,this.onServerClose,MsgDef.MSG_GATEWAY_TO_SERVERLIST_GATEWAYINFO);
 		this.clientConnection = new clientConnection(this.onNewClient,SERVER_LIST_PORT);
 		this.serverConnection.startListen();
 		this.clientConnection.startListen();
-		this.serverConnection.SERVER = this;
-
 	}
 	this.onServerClose = function(SERVER)
 	{
-		console.log("LSServerListServer:","当前服务器数量为:",self.allServers.length);
-		for (var i = 0; i < self.allServers.length; i++) {
-			var cServer = serverList.allServers[i];
-			if(cServer == SERVER)
-			{
-				self.allServers.splice(i,1);
-				console.log("onServerClose:","关闭服务器成功")
-			}
-		};
-		console.log("LSServerListServer:","当前服务器数量为:",self.allServers.length);
+		if(self.allServers[SERVER.serverName])
+		{
+			delete self.allServers[SERVER.serverName];
+			self.allServers[SERVER.serverName] = null;
+		}
 	}
 	this.handleAddress = function(IP,PORT)
 	{
 		this.SERVER_IP = IP;
 		this.SERVER_PORT = PORT;
 		console.log(IP,PORT)
-		OpenGateWay("LSGateWay.js",IP,PORT)
-		OpenGateWay("LSGateWay.js",IP,PORT)
-		OpenGateWay("LSGateWay.js",IP,PORT)
-		OpenGateWay("LSGateWay.js",IP,PORT)
+		// OpenGateWay("LSGateWay.js",IP,PORT)
+		// OpenGateWay("LSGateWay.js",IP,PORT)
+		// OpenGateWay("LSGateWay.js",IP,PORT)
+		// OpenGateWay("LSGateWay.js",IP,PORT)
+	}
+	this.serverSpeak = function(DATA,SERVER)
+	{
+		console.log("接受:",DATA);
+		SERVER.send({MSG:MsgDef.MSG_GATEWAY_TO_SERVERLIST_TEST,TEXT:"好的，我知道了"+SERVER.serverName})
 	}
 	this.onNewServer = function(SERVER)
 	{
-		self.allServers.push(SERVER)
-		console.log("LSServerListServer:","新服务器连接进来，当前服务器数量为:",self.allServers.length)
+		if(self.allServers[SERVER.serverName]==null)
+		{
+			self.allServers[SERVER.serverName] = SERVER;
+			//注册服务器相应事件
+			SERVER.regisit(MsgDef.MSG_GATEWAY_TO_SERVERLIST_TEST,self.serverSpeak);
+
+			console.log("新服务器:",SERVER.serverName,"加入");
+			SERVER.send({MSG:MsgDef.MSG_GATEWAY_TO_SERVERLIST_GATEWAYINFO,TEXT:"欢迎你"+SERVER.serverName})
+		}else{
+			console.log("ERROR:重复的服务器名称:",SERVER.serverName)
+		}
+		
 	}
 	this.onNewClient = function(CLIENT)
 	{

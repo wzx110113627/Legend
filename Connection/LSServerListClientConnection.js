@@ -4,7 +4,7 @@
 
 
 var net = require('net')
-exports.LSServerClientUnit =  function(SOCKET)
+var LSServerClientUnit =  function(SOCKET)
 {
 	this.port =  SOCKET.remotePort;
 	this.ip   = SOCKET.remoteAddress;
@@ -23,14 +23,14 @@ exports.LSServerClientUnit =  function(SOCKET)
     	
     });
 }
-
+exports.LSServerClientUnit = LSServerClientUnit;
 exports.LSServerClientConnection = function(CALLBACK,SERVER_PORT)
 {
 	this.callBack = CALLBACK;
 	this.startListen = function()
 	{
 		var server = net.createServer(function(socket){
-			socket.setEncoding('binary');
+			socket.setEncoding('utf-8');
 			var newServer = new LSGateWayClientUnit(socket);
 			this.callBack(newServer)
 		}).listen(SERVER_PORT);
