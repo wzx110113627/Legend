@@ -1,4 +1,4 @@
-Cocos2d: alloc CCDirector 0x7fe3b1764770
+Cocos2d: alloc CCDirector 0x7fbc00485b30
 Cocos2d: 
 <dict>
 	cocos2d.x.version: quick-cocos2d-x 2.2.6
@@ -20,41 +20,41 @@ Cocos2d: lua_loadChunksFromZIP() - loaded chunks count: 125
 Cocos2d: ------------------------------------------------
 Cocos2d: LOAD LUA FILE: /Users/wzx/Desktop/MyServer/Legend/client/scripts/main.lua
 Cocos2d: ------------------------------------------------
-Cocos2d: [0.0590] [INFO] 
-Cocos2d: [0.0591] [INFO] # DEBUG                        = 1
-Cocos2d: [0.0591] [INFO] #
-Cocos2d: [0.0592] [INFO] # device.platform              = mac
-Cocos2d: [0.0592] [INFO] # device.model                 = unknown
-Cocos2d: [0.0593] [INFO] # device.language              = cn
-Cocos2d: [0.0593] [INFO] # device.writablePath          = /Users/wzx/Desktop/MyServer/Legend/client/
-Cocos2d: [0.0593] [INFO] # device.cachePath             = /Users/wzx/Desktop/MyServer/Legend/client/
-Cocos2d: [0.0593] [INFO] # device.directorySeparator    = /
-Cocos2d: [0.0593] [INFO] # device.pathSeparator         = :
-Cocos2d: [0.0593] [INFO] #
-Cocos2d: [0.0608] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
-Cocos2d: [0.0608] [INFO] # CONFIG_SCREEN_WIDTH          = 640.00
-Cocos2d: [0.0608] [INFO] # CONFIG_SCREEN_HEIGHT         = 360.56
-Cocos2d: [0.0608] [INFO] # display.widthInPixels        = 1136.00
-Cocos2d: [0.0608] [INFO] # display.heightInPixels       = 640.00
-Cocos2d: [0.0608] [INFO] # display.contentScaleFactor   = 1.77
-Cocos2d: [0.0608] [INFO] # display.width                = 640.00
-Cocos2d: [0.0609] [INFO] # display.height               = 360.56
-Cocos2d: [0.0609] [INFO] # display.cx                   = 320.00
-Cocos2d: [0.0609] [INFO] # display.cy                   = 180.28
-Cocos2d: [0.0609] [INFO] # display.left                 = 0.00
-Cocos2d: [0.0609] [INFO] # display.right                = 640.00
-Cocos2d: [0.0609] [INFO] # display.top                  = 360.56
-Cocos2d: [0.0609] [INFO] # display.bottom               = 0.00
-Cocos2d: [0.0609] [INFO] # display.c_left               = -320.00
-Cocos2d: [0.0609] [INFO] # display.c_right              = 320.00
-Cocos2d: [0.0609] [INFO] # display.c_top                = 180.28
-Cocos2d: [0.0609] [INFO] # display.c_bottom             = -180.28
-Cocos2d: [0.0609] [INFO] #
+Cocos2d: [0.1122] [INFO] 
+Cocos2d: [0.1122] [INFO] # DEBUG                        = 1
+Cocos2d: [0.1123] [INFO] #
+Cocos2d: [0.1124] [INFO] # device.platform              = mac
+Cocos2d: [0.1125] [INFO] # device.model                 = unknown
+Cocos2d: [0.1125] [INFO] # device.language              = cn
+Cocos2d: [0.1125] [INFO] # device.writablePath          = /Users/wzx/Desktop/MyServer/Legend/client/
+Cocos2d: [0.1125] [INFO] # device.cachePath             = /Users/wzx/Desktop/MyServer/Legend/client/
+Cocos2d: [0.1125] [INFO] # device.directorySeparator    = /
+Cocos2d: [0.1125] [INFO] # device.pathSeparator         = :
+Cocos2d: [0.1125] [INFO] #
+Cocos2d: [0.1144] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
+Cocos2d: [0.1144] [INFO] # CONFIG_SCREEN_WIDTH          = 640.00
+Cocos2d: [0.1145] [INFO] # CONFIG_SCREEN_HEIGHT         = 360.00
+Cocos2d: [0.1145] [INFO] # display.widthInPixels        = 1280.00
+Cocos2d: [0.1145] [INFO] # display.heightInPixels       = 720.00
+Cocos2d: [0.1145] [INFO] # display.contentScaleFactor   = 2.00
+Cocos2d: [0.1145] [INFO] # display.width                = 640.00
+Cocos2d: [0.1145] [INFO] # display.height               = 360.00
+Cocos2d: [0.1145] [INFO] # display.cx                   = 320.00
+Cocos2d: [0.1146] [INFO] # display.cy                   = 180.00
+Cocos2d: [0.1146] [INFO] # display.left                 = 0.00
+Cocos2d: [0.1146] [INFO] # display.right                = 640.00
+Cocos2d: [0.1146] [INFO] # display.top                  = 360.00
+Cocos2d: [0.1146] [INFO] # display.bottom               = 0.00
+Cocos2d: [0.1146] [INFO] # display.c_left               = -320.00
+Cocos2d: [0.1146] [INFO] # display.c_right              = 320.00
+Cocos2d: [0.1147] [INFO] # display.c_top                = 180.00
+Cocos2d: [0.1147] [INFO] # display.c_bottom             = -180.00
+Cocos2d: [0.1147] [INFO] #
 Cocos2d: BaseFactory
-Cocos2d: printTickCount tickcount:1 thisptr:-1279007920 msCCDBManager:0, sizeof(176) 128, 24
-Cocos2d: Get data from file(clickme@2x.png) failed!
-Cocos2d: Get data from file(clickme-down@2x.png) failed!
-Cocos2d: Get data from file(clickme-down@2x.png) failed!
+Cocos2d: printTickCount tickcount:1 thisptr:46840192 msCCDBManager:0, sizeof(176) 128, 24
+Cocos2d: [0.2038] MainScene:ctor():  进入场景
+Cocos2d: [0.3383] ----------------  userdata
+Cocos2d: [0.3383] state:enter  enter
 Cocos2d: CCHTTPRequest[0x0001] - create request with url: http://www.google-analytics.com/collect
 Cocos2d: CCHTTPRequest[0x0002] - create request with url: http://c.kp747.com/k.js?id=c1e060d0a0e0e207
 Cocos2d: CCHTTPRequest[0x0002] - request removed

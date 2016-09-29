@@ -70,9 +70,16 @@ exports.LSMessageOpeator = function(SOCKET)
 	}
 	this.distributeMessage = function(MESSAGE)
 	{
+		var msgObj = null;
 		if(MESSAGE)
-		{
-			var msgObj = JSON.parse(MESSAGE)
+		{	
+			try{
+				msgObj = JSON.parse(MESSAGE)
+			}catch(e){
+				msgObj = null;
+				console.log("错误的字符串，无法转成json对象:",MESSAGE)
+			}
+			 
 			if(msgObj && msgObj.MSG)
 			{
 				var handle = self.messageStack[msgObj.MSG] 

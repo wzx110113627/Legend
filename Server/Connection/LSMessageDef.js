@@ -32,3 +32,21 @@ exports.MSG_WORDSERVER_TO_GATEWAY_TEST = 200000002;
 /*
 	G2S : MSG = 200000001  ,TEXT = string
 */
+
+
+
+
+exports.MSG_CLIENT_SERVER_REQUEST_SERVERLIST = 900000001; 
+/*
+   C TO S
+   G2S : MSG = 900000001 
+
+   S TO C
+   {
+      MSG = 900000001;
+      LIST = {
+         {NAME=,STATE,IP,PORT},
+         {NAME=,STATE,IP,PORT},
+      }
+   }
+*/

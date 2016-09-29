@@ -24,6 +24,10 @@ var LSGateWayUnit =  function(ON_CLOSE)
 		this.serverID = SERVER_ID;
 		this.serverName = SERVER_NAME;
 	}
+	this.getInfo = function()
+	{
+		return {NAME:self.serverName,STATE:0};
+	}
 	this.onData = function(data){
 		self.operator.onData(data)
 	}
