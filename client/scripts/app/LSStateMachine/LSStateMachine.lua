@@ -63,7 +63,6 @@ function LSStateMachine:popTo(NAME)
 		LSLog("LSStateMachine:popTo:","无效的状态名称:",NAME)
 		return 
 	end;
-
 	for i = #self.stack,1,-1 do
 		local curType = self:topType();
 		if curType and curType ~= intValue then

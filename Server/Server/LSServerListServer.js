@@ -14,6 +14,15 @@ var MsgDef = require("../Connection/LSMessageDef");
 
 var serverList = null;
 
+// function printCallStack() {  
+// 	var i = 0;  
+// 	var fun = arguments.callee;  
+// 	do {  
+// 	fun = fun.arguments.callee.caller;  
+// 	console.log(++i + ': ' + fun);  
+// 	} while (fun);  
+// } 
+
 function LSServerListServer()
 {
 	this.allServers = {}
@@ -31,11 +40,15 @@ function LSServerListServer()
 	}
 	this.onServerClose = function(SERVER)
 	{
+
 		if(self.allServers[SERVER.serverName])
 		{
+			console.log("网关点开链接:",SERVER.serverName)
 			delete self.allServers[SERVER.serverName];
-			self.allServers[SERVER.serverName] = null;
 		}
+		self.synicServerInfoToClient()
+		//printCallStack()
+
 	}
 	this.handleAddress = function(IP,PORT)
 	{
@@ -72,7 +85,9 @@ function LSServerListServer()
 	this.getServerInfoForClient = function()
 	{
 		var serverList = new Array()
+		console.log("-----------")
 		for (var key in self.allServers) {
+			console.log("-----------",key)
 			var server = self.allServers[key]
 			serverList.push(server.getInfo())
 		};
@@ -110,10 +125,29 @@ function LSServerListServer()
 
 		CLIENT.send({MSG:MsgDef.MSG_CLIENT_SERVER_REQUEST_SERVERLIST,LIST:serverInfo});
 	}
+
+	this.onClientRequestServerInfo = function(DATA,CLIENT)
+	{
+		var server = self.allServers[DATA.NAME];
+		var msg = {}
+		msg.MSG = MsgDef.MSG_CLIENT_SERVER_REQUEST_SERVER_IP;
+		if(server)
+		{
+			msg.IP = server.SERVER_IP;
+			msg.PORT = server.SERVER_PORT;
+			CLIENT.send(msg)
+			
+		}else{
+			msg.RES = 1;
+			CLIENT.send(msg)
+		}
+	}
+
 	this.onNewClient = function(CLIENT)
 	{
 		serverList.allClients.push(CLIENT);
 		CLIENT.regisit(MsgDef.MSG_CLIENT_SERVER_REQUEST_SERVERLIST,self.onClientRequestServerState)
+		CLIENT.regisit(MsgDef.MSG_CLIENT_SERVER_REQUEST_SERVER_IP,self.onClientRequestServerInfo) //请求置顶服务器ip和port
 		console.log("新客户端加入")
 	}
 };

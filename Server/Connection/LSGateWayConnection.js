@@ -11,18 +11,19 @@ var LSGateWayUnit =  function(ON_CLOSE)
 	var self = this;
 	this.setSocket = function(OPERATOR,SOCKET)
 	{
-		this.port =  SOCKET.remotePort;
-		this.ip   = SOCKET.remoteAddress;
-		this.socket =  SOCKET;
-		this.operator = OPERATOR;
+		self.SERVER_PORT = SOCKET.remotePort;
+		self.SERVER_IP   = SOCKET.remoteAddress;
+		console.log("--------",SOCKET.remotePort,SOCKET.remoteAddress)
+		self.socket =  SOCKET;
+		self.operator = OPERATOR;
 		SOCKET.on('data',self.onData);
 		SOCKET.on('error',self.onError);
 		SOCKET.on('close',this.onClose);
 	}
 	this.setInfo = function(SERVER_ID,SERVER_NAME)
 	{
-		this.serverID = SERVER_ID;
-		this.serverName = SERVER_NAME;
+		self.serverID = SERVER_ID;
+		self.serverName = SERVER_NAME;
 	}
 	this.getInfo = function()
 	{

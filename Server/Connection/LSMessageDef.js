@@ -50,3 +50,18 @@ exports.MSG_CLIENT_SERVER_REQUEST_SERVERLIST = 900000001;
       }
    }
 */
+
+exports.MSG_CLIENT_SERVER_REQUEST_SERVER_IP = 900000002; 
+
+/*
+   C TO S
+   G2S : MSG = 900000002 
+         NAME:string
+
+   S TO C
+   {
+      MSG = 900000002;
+      IP:string
+      PORT:int
+   }
+*/

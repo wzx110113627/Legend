@@ -75,6 +75,7 @@ function createConnectUnit( IP,PORT,ON_CONNECT,ON_CLOSE)
 		print("socket onConnected: %s", EVENT.name)
 		local sendOBJ = {}
 		sendOBJ["MSG"] = 900000001;
+		ON_CONNECT(self)
 
 	end
 	function LSConnectUnit:onData( EVENT )
@@ -118,7 +119,7 @@ function createConnectUnit( IP,PORT,ON_CONNECT,ON_CLOSE)
 	function LSConnectUnit:send( DATA )
 		if DATA then 
 			local sendText = tableTojson(DATA)
-			self.socket:send("sendText"..self.spater)
+			self.socket:send(sendText..self.spater)
 		end
 	end
 

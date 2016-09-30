@@ -5,7 +5,7 @@ var MsgOperator = require("../Connection/LSMessageOpeator").LSMessageOpeator;
 var net = require('net')
 var LSServerClientUnit =  function(SOCKET,ON_CLOSE)
 {
-	this.port =  SOCKET.remotePort;
+	this.port =  SOCKET.address().port;
 	this.ip   = SOCKET.remoteAddress;
 	this.socket =  SOCKET
 	var self = this;
@@ -46,6 +46,7 @@ exports.LSServerClientConnection = function(CALLBACK,SERVER_PORT,ON_CLOSE)
 			var newServer = new LSServerClientUnit(socket,ON_CLOSE);
 			self.callBack(newServer)
 		}).listen(SERVER_PORT);
+		
 		server.on('listening',function(){
 		    console.log("LSServerClientConnection:" + server.address().port);
 		});

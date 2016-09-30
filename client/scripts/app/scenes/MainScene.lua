@@ -1,6 +1,8 @@
 require("app/Tools/GEnum")
 require("app/Tools/LSLog")
 require("app/LSStateMachine/LSStateMachine")
+require("app/LSManager/LSNetManager")
+
 MainScene = class("MainScene", function()
     return display.newScene("MainScene")
 end)
@@ -10,7 +12,7 @@ function MainScene:ctor()
     LSStateMachine.ROOT_VIEW = self;
 	LSStateMachine:pushByName("GAME_STATE_SERVER_LIST")
    
-   
+   LSNetManager:connectServerList();
 
     -- -- ui.newTTFLabel({text = "Hello, World", size = 64, align = ui.TEXT_ALIGN_CENTER})
     -- --     :pos(display.cx, display.cy)

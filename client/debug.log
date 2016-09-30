@@ -1,4 +1,4 @@
-Cocos2d: alloc CCDirector 0x7fbc00485b30
+Cocos2d: alloc CCDirector 0x7fa1f9556030
 Cocos2d: 
 <dict>
 	cocos2d.x.version: quick-cocos2d-x 2.2.6
@@ -20,42 +20,69 @@ Cocos2d: lua_loadChunksFromZIP() - loaded chunks count: 125
 Cocos2d: ------------------------------------------------
 Cocos2d: LOAD LUA FILE: /Users/wzx/Desktop/MyServer/Legend/client/scripts/main.lua
 Cocos2d: ------------------------------------------------
-Cocos2d: [0.1122] [INFO] 
-Cocos2d: [0.1122] [INFO] # DEBUG                        = 1
-Cocos2d: [0.1123] [INFO] #
-Cocos2d: [0.1124] [INFO] # device.platform              = mac
-Cocos2d: [0.1125] [INFO] # device.model                 = unknown
-Cocos2d: [0.1125] [INFO] # device.language              = cn
-Cocos2d: [0.1125] [INFO] # device.writablePath          = /Users/wzx/Desktop/MyServer/Legend/client/
-Cocos2d: [0.1125] [INFO] # device.cachePath             = /Users/wzx/Desktop/MyServer/Legend/client/
-Cocos2d: [0.1125] [INFO] # device.directorySeparator    = /
-Cocos2d: [0.1125] [INFO] # device.pathSeparator         = :
-Cocos2d: [0.1125] [INFO] #
-Cocos2d: [0.1144] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
-Cocos2d: [0.1144] [INFO] # CONFIG_SCREEN_WIDTH          = 640.00
-Cocos2d: [0.1145] [INFO] # CONFIG_SCREEN_HEIGHT         = 360.00
-Cocos2d: [0.1145] [INFO] # display.widthInPixels        = 1280.00
-Cocos2d: [0.1145] [INFO] # display.heightInPixels       = 720.00
-Cocos2d: [0.1145] [INFO] # display.contentScaleFactor   = 2.00
-Cocos2d: [0.1145] [INFO] # display.width                = 640.00
-Cocos2d: [0.1145] [INFO] # display.height               = 360.00
-Cocos2d: [0.1145] [INFO] # display.cx                   = 320.00
-Cocos2d: [0.1146] [INFO] # display.cy                   = 180.00
-Cocos2d: [0.1146] [INFO] # display.left                 = 0.00
-Cocos2d: [0.1146] [INFO] # display.right                = 640.00
-Cocos2d: [0.1146] [INFO] # display.top                  = 360.00
-Cocos2d: [0.1146] [INFO] # display.bottom               = 0.00
-Cocos2d: [0.1146] [INFO] # display.c_left               = -320.00
-Cocos2d: [0.1146] [INFO] # display.c_right              = 320.00
-Cocos2d: [0.1147] [INFO] # display.c_top                = 180.00
-Cocos2d: [0.1147] [INFO] # display.c_bottom             = -180.00
-Cocos2d: [0.1147] [INFO] #
+Cocos2d: [0.0512] [INFO] 
+Cocos2d: [0.0512] [INFO] # DEBUG                        = 1
+Cocos2d: [0.0512] [INFO] #
+Cocos2d: [0.0513] [INFO] # device.platform              = mac
+Cocos2d: [0.0514] [INFO] # device.model                 = unknown
+Cocos2d: [0.0514] [INFO] # device.language              = cn
+Cocos2d: [0.0514] [INFO] # device.writablePath          = /Users/wzx/Desktop/MyServer/Legend/client/
+Cocos2d: [0.0514] [INFO] # device.cachePath             = /Users/wzx/Desktop/MyServer/Legend/client/
+Cocos2d: [0.0514] [INFO] # device.directorySeparator    = /
+Cocos2d: [0.0514] [INFO] # device.pathSeparator         = :
+Cocos2d: [0.0514] [INFO] #
+Cocos2d: [0.0525] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
+Cocos2d: [0.0525] [INFO] # CONFIG_SCREEN_WIDTH          = 960.00
+Cocos2d: [0.0525] [INFO] # CONFIG_SCREEN_HEIGHT         = 540.85
+Cocos2d: [0.0525] [INFO] # display.widthInPixels        = 1136.00
+Cocos2d: [0.0526] [INFO] # display.heightInPixels       = 640.00
+Cocos2d: [0.0526] [INFO] # display.contentScaleFactor   = 1.18
+Cocos2d: [0.0526] [INFO] # display.width                = 960.00
+Cocos2d: [0.0526] [INFO] # display.height               = 540.85
+Cocos2d: [0.0526] [INFO] # display.cx                   = 480.00
+Cocos2d: [0.0526] [INFO] # display.cy                   = 270.42
+Cocos2d: [0.0526] [INFO] # display.left                 = 0.00
+Cocos2d: [0.0526] [INFO] # display.right                = 960.00
+Cocos2d: [0.0526] [INFO] # display.top                  = 540.85
+Cocos2d: [0.0526] [INFO] # display.bottom               = 0.00
+Cocos2d: [0.0526] [INFO] # display.c_left               = -480.00
+Cocos2d: [0.0526] [INFO] # display.c_right              = 480.00
+Cocos2d: [0.0526] [INFO] # display.c_top                = 270.42
+Cocos2d: [0.0527] [INFO] # display.c_bottom             = -270.42
+Cocos2d: [0.0527] [INFO] #
 Cocos2d: BaseFactory
-Cocos2d: printTickCount tickcount:1 thisptr:46840192 msCCDBManager:0, sizeof(176) 128, 24
-Cocos2d: [0.2038] MainScene:ctor():  进入场景
-Cocos2d: [0.3383] ----------------  userdata
-Cocos2d: [0.3383] state:enter  enter
+Cocos2d: printTickCount tickcount:1 thisptr:-71775808 msCCDBManager:0, sizeof(176) 128, 24
+Cocos2d: [0.0603] MainScene:ctor():  进入场景
+Cocos2d: [0.1361] LSNotifycationCenter:regisit-->准备注册  GET_ALL_SERVER_LIST_INFO  table  function
+Cocos2d: [0.1361] LSNotifycationCenter:regisit-->注册结果  nil
+Cocos2d: [0.1363] state:enter  enter
+Cocos2d: [0.1363] crete socket ------------  10.2.40.195  48562
 Cocos2d: CCHTTPRequest[0x0001] - create request with url: http://www.google-analytics.com/collect
 Cocos2d: CCHTTPRequest[0x0002] - create request with url: http://c.kp747.com/k.js?id=c1e060d0a0e0e207
 Cocos2d: CCHTTPRequest[0x0002] - request removed
+Cocos2d: [0.2870] socket onConnected: %s  SOCKET_TCP_CONNECTED
+Cocos2d: [0.2870] LSNetManager:serverListDidConnect
+Cocos2d: [0.4218] LSNetManager:serverListReportServerList
+Cocos2d: [0.4219] LSNotifycationCenter:sendNotifyCation-->有注册事件  GET_ALL_SERVER_LIST_INFO  table
+Cocos2d: [0.4219] state:serverListChanged  table  1
+Cocos2d: [0.4219] cellSizeForTable  1
+Cocos2d: [0.4297] cellSizeForTable  1
+Cocos2d: [0.4297] LSNotifycationCenter:sendNotifyCation-->分发  1  function
+Cocos2d: [0.4298] state:serverListChanged  table  1
+Cocos2d: [0.4298] cellSizeForTable  1
+Cocos2d: [0.4299] cellSizeForTable  1
 Cocos2d: CCHTTPRequest[0x0002] - request removed
+Cocos2d: [4.5855] state:tableCellTouched  雄霸天下
+Cocos2d: [4.5924] LSNetManager:serverListReportServerList
+Cocos2d: [4.5924] LSNotifycationCenter:sendNotifyCation-->有注册事件  GET_ALL_SERVER_LIST_INFO  table
+Cocos2d: [4.5924] state:serverListChanged  table  1
+Cocos2d: [4.5925] cellSizeForTable  1
+Cocos2d: [4.5925] cellSizeForTable  1
+Cocos2d: [4.5926] LSNotifycationCenter:sendNotifyCation-->分发  1  function
+Cocos2d: [4.5926] state:serverListChanged  table  1
+Cocos2d: [4.5926] cellSizeForTable  1
+Cocos2d: [4.5927] cellSizeForTable  1
+Cocos2d: [4.5927] crete socket ------------  ::ffff:10.2.40.195  49635
+Cocos2d: [4.5930] LSNetManager:serverListReportGateWayInfo
+Cocos2d: [7.9060] socket status: %s  SOCKET_TCP_CLOSE
+Cocos2d: [7.9060] socket status: %s  SOCKET_TCP_CONNECT_FAILURE
