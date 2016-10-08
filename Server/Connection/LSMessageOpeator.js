@@ -1,29 +1,29 @@
 /*
 	作用：负责消息的解析与反解析，并且分发给对应的对象制定的函数去处理
 */
+var LSLog = require("../public/LSCommondHandle").LSLog;
+
 
 function LSMessage(ID,CALLBACK)
 {
 	this.messageID = ID;
 	this.messageHandle = CALLBACK;
 
-	this.callFunc = function(PARAM,TARGET)
+	this.callFunc = function(TARGET,PARAM)
 	{
-		this.messageHandle(PARAM,TARGET)
+		this.messageHandle(TARGET,PARAM)
 	}
 }
 
-exports.LSMessageOpeator = function(SOCKET)
+exports.LSMessageOpeator = function()
 {
 	var self = this;
 	var seprater = String.fromCharCode(1);
-	this.socket = SOCKET;
 	this.messageStack = {};
 	this.buff = ""
 	this.setTarget = function(TARGET)
 	{
 		self.serverTarget = TARGET;
-
 	}
 	this.regisit = function(ID,CALLBACK)
 	{
@@ -32,26 +32,17 @@ exports.LSMessageOpeator = function(SOCKET)
 			var handle = new LSMessage(ID,CALLBACK)
 			this.messageStack[ID] = handle;
 		}else{
-			console.log("注册回调失败，错误的id 或 callback:",ID,CALLBACK)
+			LSLog("注册回调失败，错误的id 或 callback:"+ID+" "+CALLBACK)
 		}
 	}
-
-	this.send = function(PARAM)
-	{
-		if(PARAM)
-		{
-			var sendText = JSON.stringify(PARAM) + seprater;
-			self.socket.write(sendText);
-			console.log("发送消息:",sendText)
-		}
+	this.clean = function(){
+		this.buff = "";
 	}
-
 	this.onData = function(Data)
 	{
 		if(Data && Data != "undefined")
 		self.buff = self.buff + Data;
 		self.analysis();
-
 	}
 	this.analysis = function()
 	{
@@ -77,7 +68,7 @@ exports.LSMessageOpeator = function(SOCKET)
 				msgObj = JSON.parse(MESSAGE)
 			}catch(e){
 				msgObj = null;
-				console.log("错误的字符串，无法转成json对象:",MESSAGE)
+				LSLog("错误的字符串，无法转成json对象:"+MESSAGE)
 			}
 			 
 			if(msgObj && msgObj.MSG)
@@ -85,12 +76,12 @@ exports.LSMessageOpeator = function(SOCKET)
 				var handle = self.messageStack[msgObj.MSG] 
 				if(handle)
 				{
-					handle.callFunc(msgObj,self.serverTarget)
+					handle.callFunc(self.serverTarget,msgObj)
 				}else{
-					console.log("distributeMessage:该函数无回调函数",msgObj.MSG);
+					LSLog("distributeMessage:该函数无回调函数"+msgObj.MSG);
 				}
 			}else{
-				console.log("distributeMessage:错误的消息体",MESSAGE);
+				LSLog("distributeMessage:错误的消息体"+MESSAGE);
 			}
 		}
 	}

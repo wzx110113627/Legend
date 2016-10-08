@@ -12,14 +12,14 @@ exports.LSServerConnectionClientUnit =  function(IP,PORT,ON_CONNECTION,ON_DATA,O
 	this.connection = function()
 	{
 		client.connect(PORT,IP,function(){
-		    ON_CONNECTION(this);
+			ON_CONNECTION(this);
 		});
 		client.on('data',ON_DATA);
 		client.on('error',ON_ERROR);
 		client.on('close',ON_DISCONNECTION);
 	}
-    this.closeConnection = function()
-    {
-    	this.socket.end();
-    }
+	this.closeConnection = function()
+	{
+		this.socket.end();
+	}
 }
