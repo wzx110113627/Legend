@@ -34,7 +34,6 @@ function LSConnection(SOCKET,CLOSE_FUNC)
             }
             self.socket.end();
             self.msgOperator.clean();
-            CLOSE_FUNC(self,exception)
         });
         //客户端关闭事件
         SOCKET.on('close',function(data){

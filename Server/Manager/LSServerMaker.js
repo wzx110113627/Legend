@@ -10,7 +10,7 @@ var LSGetIP = require("../public/LSCommondHandle").LSGetIP;
 module.exports = LSServerMaker;
 
 /*
-*    参数1:服务器启动之后的通知.
+*   参数1:服务器启动之后的通知.
 *   参数2:新服务器进入时候,用于通知的函数
 *   参数3:服务器关闭用户通知的函数
 *   参数4:启动的端口号
@@ -26,7 +26,7 @@ function LSServerMaker(START_FUNC,NEW_FUNC,CLOSE_FUNC,PORT)
         }).listen(PORT);
 
         server.on('listening',function(){
-            START_FUNC(LSGetIP(),PORT);
+            START_FUNC(LSGetIP(),server.address().port);
         });
         server.on("error",function(exception){
             LSLog("LSServerClientConnection error:" + exception);

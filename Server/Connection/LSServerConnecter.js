@@ -36,9 +36,8 @@ function LSServerConnecter(IP,PORT,CONNECTED_FUNC,CLOSE_FUNC)
             self.msgOperator.onData(data);
         });
         client.on('error', function (error) {
-            LSLog("LSServerConnecter:"+error)
+            LSLog("LSServerConnecter->socket:"+error)
             self.state = LSCONNECTER_STATE.LSCONNECTER_STATE_CLOSE;
-            CLOSE_FUNC(self)
             self.msgOperator.clean();
         });
         client.on('close', function (data) {

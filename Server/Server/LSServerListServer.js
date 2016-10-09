@@ -11,13 +11,11 @@ var LSServerHandler = require("../Connection/LSServerHandler").LSServerHandler;
 var LSSERVER_STATE = require("../Connection/LSServerHandler").LSSERVER_STATE;
 var LSLog = require("../public/LSCommondHandle").LSLog;
 var MSG = require("../Connection/LSMessageDef");
-
 require("../public/LSHelper");
 
 function LSServerListServer()
 {
     var self = this;
-
     function init(){
         self.serverArray = new Array();
         self.clientArray = new Array();
@@ -33,7 +31,7 @@ function LSServerListServer()
     {
         self.serverIP = IP;
         self.serverPort = PORT;
-        LSLog("ServerListStartForServerOn:"+IP + " port:"+PORT)
+        LSLog("LSServerListServer->ServerListStartForServerOn:"+IP + " port:"+PORT)
     }
     //新服务器连接进来,但是现在无法知道服务器的具体信息
     this.newGateWayComein = function(GateWay)
@@ -41,11 +39,10 @@ function LSServerListServer()
         if(GateWay)
         {
             self.serverArray.push(GateWay)
-            LSLog("newGateWayComein,当前数量为:"+self.serverArray.length);
+            LSLog("LSServerListServer->newGateWayComein,当前数量为:"+self.serverArray.length);
             GateWay.regisit(MSG.MSG_GATEWAY_TO_SERVERLIST_GATEWAYINFO,self.gateWayReportInfo)
         }
     }
-
     //服务器状态发生改变的时候.Info里面有服务器的名称,状态,类型等信息
     this.gateWayReportInfo = function(GateWay,Info)
     {
@@ -54,7 +51,7 @@ function LSServerListServer()
             GateWay.setState(LSCONNECTION_STATE.LSCONNECTION_ON_CONNECTTING);
             GateWay.setServerState(Info.SERVER_STATE)
             GateWay.setServerName(Info.SERVER_NAME)
-            LSLog("gateWayReportInfo:欢迎服务器 :"+Info.SERVER_NAME+" 的加入")
+            LSLog("LSServerListServer->gateWayReportInfo:欢迎服务器 :"+Info.SERVER_NAME+" 的加入")
 
             var msg = {}
             msg.MSG = MSG.MSG_GATEWAY_TO_SERVERLIST_GATEWAYINFO;
@@ -69,9 +66,9 @@ function LSServerListServer()
         {
             if(this.serverArray.remove(GateWay))
             {
-                LSLog("gateWayDisConnect: 网关:"+GateWay.getServerName()+" 关闭"+ ",剩余服务器数量:"+self.serverArray.length);
+                LSLog("LSServerListServer->gateWayDisConnect: 网关:"+GateWay.getServerName()+" 关闭"+ ",剩余服务器数量:"+self.serverArray.length);
             }else{
-                LSLog("gateWayDisConnect: 网关:"+GateWay.getServerName()+" 关闭失败,没有找到这个服务器"+ ",剩余服务器数量:"+self.serverArray.length);
+                LSLog("LSServerListServer->gateWayDisConnect: 网关:"+GateWay.getServerName()+" 关闭失败,没有找到这个服务器"+ ",剩余服务器数量:"+self.serverArray.length);
             }
 
         }

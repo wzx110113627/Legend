@@ -5,9 +5,26 @@ var exec = require('child_process').exec;
 var os = require('os');
 
 // 缩短日志书写的名称
-exports.LSLog=function(VALUE)
+
+exports.LSLog=function()
 {
-	console.log(arguments)
+	var jsStr = "  LSLog:: ";
+	if(arguments.length == 1)
+	{
+		console.log(jsStr,arguments[0]);
+	}else if(arguments.length == 2){
+		console.log(jsStr,arguments[0],arguments[1]);
+	}else if(arguments.length == 3){
+		console.log(jsStr,arguments[0],arguments[1],arguments[2]);
+	}else if(arguments.length == 4){
+		console.log(jsStr,arguments[0],arguments[1],arguments[2],arguments[3]);
+	}else if(arguments.length == 5){
+		console.log(jsStr,arguments[0],arguments[1],arguments[2],arguments[3],arguments[4]);
+	}else if(arguments.length == 6){
+		console.log(jsStr,arguments[0],arguments[1],arguments[2],arguments[3],arguments[4],arguments[5]);
+	}else{
+		console.log(jsStr,arguments);
+	}
 }
 
 /*

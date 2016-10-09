@@ -23,7 +23,6 @@ function LSPlayerHandler(SOCKET,CLOSE_FUNC)
     this.clientState = LSCLIENT_STATE.LSCLIENT_STATE_CONNECTED;
 }
 
-
 LSServerHandler.prototype = new LSConnection();
 LSServerHandler.prototype.getClientInfo = function()
 {

@@ -32,7 +32,7 @@ exports.LSMessageOpeator = function()
 			var handle = new LSMessage(ID,CALLBACK)
 			this.messageStack[ID] = handle;
 		}else{
-			LSLog("注册回调失败，错误的id 或 callback:"+ID+" "+CALLBACK)
+			LSLog("LSMessageOpeator->regisit:注册回调失败，错误的id 或 callback:"+ID+" "+CALLBACK)
 		}
 	}
 	this.clean = function(){
@@ -68,9 +68,8 @@ exports.LSMessageOpeator = function()
 				msgObj = JSON.parse(MESSAGE)
 			}catch(e){
 				msgObj = null;
-				LSLog("错误的字符串，无法转成json对象:"+MESSAGE)
+				LSLog("LSMessageOpeator->distributeMessage:错误的字符串，无法转成json对象:"+MESSAGE)
 			}
-			 
 			if(msgObj && msgObj.MSG)
 			{
 				var handle = self.messageStack[msgObj.MSG] 
@@ -78,10 +77,10 @@ exports.LSMessageOpeator = function()
 				{
 					handle.callFunc(self.serverTarget,msgObj)
 				}else{
-					LSLog("distributeMessage:该函数无回调函数"+msgObj.MSG);
+					LSLog("LSMessageOpeator->distributeMessage:该函数无回调函数"+msgObj.MSG);
 				}
 			}else{
-				LSLog("distributeMessage:错误的消息体"+MESSAGE);
+				LSLog("LSMessageOpeator->distributeMessage:错误的消息体"+MESSAGE);
 			}
 		}
 	}

@@ -19,7 +19,7 @@ var LSLog = require("../public/LSCommondHandle").LSLog;
 
 function LSServerHandler(SOCKET,CLOSE_FUNC)
 {
-    LSLog("LSServerHandler:"+SOCKET)
+    LSLog("LSServerHandler->init:"+SOCKET)
     LSConnection.call(this,SOCKET,CLOSE_FUNC)
     this.port = SOCKET.address().port;
     this.ip = SOCKET.remoteAddress;
