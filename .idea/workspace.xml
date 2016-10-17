@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5b2428d-e7d4-4a06-ac29-1d36abece022" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Server/Manager/LSPlayerMaker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Connection/LSConnection.js" afterPath="$PROJECT_DIR$/Server/Connection/LSConnection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Connection/LSMessageOpeator.js" afterPath="$PROJECT_DIR$/Server/Connection/LSMessageOpeator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Connection/LSPlayerHandler.js" afterPath="$PROJECT_DIR$/Server/Connection/LSPlayerHandler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Connection/LSServerConnecter.js" afterPath="$PROJECT_DIR$/Server/Connection/LSServerConnecter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Connection/LSServerHandler.js" afterPath="$PROJECT_DIR$/Server/Connection/LSServerHandler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Manager/LSServerMaker.js" afterPath="$PROJECT_DIR$/Server/Manager/LSServerMaker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Server/LSGateWay.js" afterPath="$PROJECT_DIR$/Server/Server/LSGateWay.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Server/LSServerListServer.js" afterPath="$PROJECT_DIR$/Server/Server/LSServerListServer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Server/LSWordServer.js" afterPath="$PROJECT_DIR$/Server/Server/LSWordServer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/public/LSCommondHandle.js" afterPath="$PROJECT_DIR$/Server/public/LSCommondHandle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Server/LSDungeonServer.js" afterPath="$PROJECT_DIR$/Server/Server/LSDungeonServer.js" />
     </list>
     <ignored path="Legend.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,18 +23,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LSMessageOpeator.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/Connection/LSMessageOpeator.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.148148">
-              <caret line="67" column="35" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="35" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="LSServerConnecter.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/Connection/LSServerConnecter.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -58,67 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LSConnection.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/Connection/LSConnection.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LSServerListServer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/Server/LSServerListServer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.2222223">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LSMessageDef.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/Connection/LSMessageDef.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LSPlayerHandler.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/Connection/LSPlayerHandler.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LSWordServer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/Server/LSWordServer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.111111">
-              <caret line="40" column="46" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LSCommondHandle.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LSCommondHandle.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/public/LSCommondHandle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45720986">
-              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+            <state vertical-scroll-proportion="-7.2222223">
+              <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -126,11 +47,79 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LSGateWay.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/Server/LSGateWay.js">
+      <file leaf-file-name="LSDungeonServer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/Server/LSDungeonServer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.7222223">
-              <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LSGameObject.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/Model/LSGameObject.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LSModelTest.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/Model/LSModelTest.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LSPlayer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/Model/LSPlayer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LSServer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/Model/LSServer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LSServerMaker.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/Manager/LSServerMaker.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LSPlayerMaker.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Server/Manager/LSPlayerMaker.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2556818">
+              <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -175,6 +164,7 @@
         <option value="$PROJECT_DIR$/Server/Server/LSGateWay.js" />
         <option value="$PROJECT_DIR$/Server/Server/LSWordServer.js" />
         <option value="$PROJECT_DIR$/Server/public/LSCommondHandle.js" />
+        <option value="$PROJECT_DIR$/Server/Server/LSDungeonServer.js" />
       </list>
     </option>
   </component>
@@ -184,8 +174,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="697" />
-    <option name="y" value="23" />
+    <option name="x" value="485" />
+    <option name="y" value="57" />
     <option name="width" value="1920" />
     <option name="height" value="977" />
   </component>
@@ -395,8 +385,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="697" y="23" width="1920" height="977" extended-state="0" />
-    <editor active="true" />
+    <frame x="485" y="57" width="1920" height="977" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18229167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -615,34 +605,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Model/LSGameObject.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Model/LSModelTest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Model/LSServer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Model/LSPlayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Server(old)/Model/LSModelTest.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -657,13 +619,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Server/LSDungeonServer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -712,6 +667,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -721,26 +679,6 @@
           <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Manager/LSServerMaker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="56" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="56" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Manager/LSPlayerMaker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -833,8 +771,74 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/public/LSCommondHandle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45720986">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        <state vertical-scroll-proportion="-7.2222223">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/Server/LSDungeonServer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/Model/LSGameObject.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/Model/LSModelTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/Model/LSPlayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/Model/LSServer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/Manager/LSServerMaker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/Manager/LSPlayerMaker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2556818">
+          <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
