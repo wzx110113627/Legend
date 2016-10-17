@@ -61,14 +61,19 @@ function createConnectUnit( IP,PORT,ON_CONNECT,ON_CLOSE)
 			self.socket = cc.net.SocketTCP.new(self.serverIP, self.serverPort, false);
 			self.socket:addEventListener(cc.net.SocketTCP.EVENT_CONNECTED, handler(self, self.onConnected))
 			self.socket:addEventListener(cc.net.SocketTCP.EVENT_CLOSE, handler(self,self.onStatus))
-			self.socket:addEventListener(cc.net.SocketTCP.EVENT_CLOSED, handler(self,self.onStatus))
-			self.socket:addEventListener(cc.net.SocketTCP.EVENT_CONNECT_FAILURE, handler(self,self.onStatus))
+			self.socket:addEventListener(cc.net.SocketTCP.EVENT_CLOSED, handler(self,self.onClose))
+			self.socket:addEventListener(cc.net.SocketTCP.EVENT_CONNECT_FAILURE, handler(self,self.onClose))
 			self.socket:addEventListener(cc.net.SocketTCP.EVENT_DATA, handler(self,self.onData))
 		end
 		self.socket:connect();
 	end
 	function LSConnectUnit:onStatus( EVENT )
 		print("socket status: %s", EVENT.name)
+
+	end
+
+	function LSConnectUnit:onClose( EVENT )
+		ON_CLOSE(self)
 	end
 
 	function LSConnectUnit:onConnected( EVENT )
@@ -113,7 +118,7 @@ function createConnectUnit( IP,PORT,ON_CONNECT,ON_CLOSE)
 	end
 
 	function LSConnectUnit:close( )
-		self.socket.close();
+		self.socket:close();
 	end
 
 	function LSConnectUnit:send( DATA )

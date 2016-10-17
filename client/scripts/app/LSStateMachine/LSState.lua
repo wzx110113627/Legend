@@ -32,7 +32,7 @@ StateCreater["GAME_STATE_SERVER_LIST"] = function( PARAM )
 		-- tableView:setTouchPriority(-1)
 		tableView:setDirection(kCCScrollViewDirectionVertical)
 		-- tableView:setPosition(ccp(0, 0))
-		--tableView:setVerticalFillOrder(kCCTableViewFillTopDown)
+		tableView:setVerticalFillOrder(kCCTableViewFillTopDown)
 		state.TABLE_VIEW:addChild(tableView)
 		tableView:registerScriptHandler(handler(state, state.cellSizeForTable), CCTableView.kTableCellSizeForIndex)
 		tableView:registerScriptHandler(handler(state, state.tableCellAtIndex), CCTableView.kTableCellSizeAtIndex)
@@ -56,7 +56,10 @@ StateCreater["GAME_STATE_SERVER_LIST"] = function( PARAM )
 		        cell:addChild(cell.CELL_VIEW)
 		    end
 		    local info = LSNetManager.SERVER_INFO[idx+1]
-		    cell.SERVER_NAME:setString(info.NAME)
+		    cell.SERVER_NAME:setString(info.SERVER_NAME)
+		    local index = idx + 1;
+		    cell.SERVER_INDEX:setString(index.."")
+		    cell.INDEX = index;
 		return  cell;
 	end
 
@@ -69,7 +72,11 @@ StateCreater["GAME_STATE_SERVER_LIST"] = function( PARAM )
 
 	function state:tableCellTouched(view, cell)
 		LSLog("state:tableCellTouched",cell.SERVER_NAME:getString())
-		LSNetManager:requestGateWayIPByName( cell.SERVER_NAME:getString() )
+		local index =  cell.INDEX;
+		local serverInfo = LSNetManager.SERVER_INFO[index];
+		LSLog("IP:"..serverInfo.SERVER_IP.." port:"..serverInfo.SERVER_PORT)
+
+		LSNetManager:setGateWayIPandPort(serverInfo.SERVER_IP,serverInfo.SERVER_PORT)
 		
 	end
 

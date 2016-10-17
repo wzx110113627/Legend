@@ -26,6 +26,7 @@ function LSServerHandler(SOCKET,CLOSE_FUNC)
     this.name = "未定义"
     this.serverState = LSSERVER_STATE.LSSERVER_STATE_CLOSE;
     this.state = LSCONNECTION_STATE.LSCONNECTION_ON_INIT;
+    this.serverID = 0;
 }
 LSServerHandler.prototype = new LSConnection();
 LSServerHandler.prototype.getServerInfo = function()
@@ -35,6 +36,7 @@ LSServerHandler.prototype.getServerInfo = function()
     info.SERVER_PORT = this.port;
     info.SERVER_NAME = this.name;
     info.SERVER_STATE = this.serverState;
+    info.SERVER_ID = this.serverID;
     return info;
 }
 LSServerHandler.prototype.setServerState = function(state)
@@ -43,6 +45,11 @@ LSServerHandler.prototype.setServerState = function(state)
     {
         this.state = state;
     }
+}
+
+LSServerHandler.prototype.setServerID = function(serverID)
+{
+    this.serverID = serverID;
 }
 
 LSServerHandler.prototype.getServerState = function()
