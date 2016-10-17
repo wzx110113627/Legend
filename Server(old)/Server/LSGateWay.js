@@ -1,4 +1,4 @@
-/*
+﻿/*
 	作用:各个游戏服务器的网关,启动之后会主动联系ServerList服务器
 */
 
@@ -24,7 +24,7 @@ function LSGateWay(IP,PORT)
 		this.serverConnection.connection()
 		this.serverListoperator = new MsgOperator(this.serverConnection.socket);
 		this.serverListoperator.regisit(MsgDef.MSG_GATEWAY_TO_SERVERLIST_GATEWAYINFO,this.onFirstConnection);
-		this.serverListoperator.regisit(MsgDef.MSG_GATEWAY_TO_SERVERLIST_TEST,this.onServerListSpeak);
+		this.serverListoperator.regisit(MsgDef.MSG_GATEWAY_TO_SERVERLIST_TEST,this.onServerListSpeak);   
 
 
 		this.worldServerConnection = new WordServerConnection(this.handleAddress,this.onNewWorldServer,this.onWorldServerClose,MsgDef.MSG_WORDSERVER_TO_GATEWAY_WORDSERVERINFO);
