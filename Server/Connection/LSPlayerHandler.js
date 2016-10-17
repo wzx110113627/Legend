@@ -3,28 +3,29 @@
 * */
 
 module.exports = LSPlayerHandler;
-module.exports = LSCLIENT_STATE;
+
 
 LSCLIENT_STATE = {}
 LSCLIENT_STATE.LSCLIENT_STATE_CLOSE  = 0;  //连接断开
 LSCLIENT_STATE.LSCLIENT_STATE_CONNECTED = 1;//刚刚连接进来,不知道是谁
 LSCLIENT_STATE.LSCLIENT_STATE_INIT = 2;  //正常情况了
 
+module.exports.LSCLIENT_STATE = LSCLIENT_STATE;
 
 var LSConnection = require("../Connection/LSConnection");
 var LSCONNECTION_STATE = require("../Connection/LSConnection").LSCONNECTION_STATE;
 
 function LSPlayerHandler(SOCKET,CLOSE_FUNC)
 {
-    LSConnection.call(SOCKET,CONNECT_FUNC,CLOSE_FUNC)
+    LSConnection.call(this,SOCKET,CLOSE_FUNC)
     this.port = SOCKET.address().port;
     this.ip = SOCKET.remoteAddress;
     this.state = LSCONNECTION_STATE.LSCONNECTION_ON_INIT;
     this.clientState = LSCLIENT_STATE.LSCLIENT_STATE_CONNECTED;
 }
 
-LSServerHandler.prototype = new LSConnection();
-LSServerHandler.prototype.getClientInfo = function()
+LSPlayerHandler.prototype = new LSConnection();
+LSPlayerHandler.prototype.getClientInfo = function()
 {
     var info = {}
     info.CLIENT_IP = this.ip;

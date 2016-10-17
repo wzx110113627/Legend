@@ -40,6 +40,11 @@ exports.LSOpenGatWay = function(FILE_NAME,IP,PORT)
 	exec(commandText)
 }
 
+exports.LSCreateWordServer = function (FILE_NAME,IP,PORT,SERVER_ID) {
+	var commandText = "forever start " + FILE_NAME + " " + IP + " " + PORT + " " + SERVER_ID;
+	exec(commandText)
+}
+
 exports.LSGetIP = function () {
 	var IPv4,hostName;
 	hostName=os.hostname();
